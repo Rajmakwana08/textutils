@@ -4,7 +4,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, {useState} from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -34,24 +34,22 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar title="TextUtils" mode={mode} changeThemeColor={changeThemeColor} />
         <Alert alert={alert} />
         <div className="container my-3">
-          {/* <Routes>
+          <Routes>
             <Route exact 
               path="/" 
-              element={ */}
-              <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} textareaBackground={textareaBackground} />
-            {/* } 
+              element={<TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter, Remove extra Spaces" mode={mode} textareaBackground={textareaBackground} />} 
             />
             <Route 
               path="/about" 
-              element={<About />} 
+              element={<About mode={mode}/>} 
             />
-          </Routes> */}
+          </Routes>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
