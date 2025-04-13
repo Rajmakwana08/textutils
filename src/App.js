@@ -3,7 +3,7 @@ import Alert from './components/Alert';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -27,10 +27,23 @@ function App() {
       red: '#dc3545',
       yellow: '#ffc107'
     };
+    const textareaColors = {
+      light: '#fff',
+      dark: '#444',
+      blue: '#1a8cff',
+      green: '#32cd32',
+      red: '#ff4d4d',
+      yellow: '#ffdb4d'
+    };
     document.body.style.backgroundColor = colors[color] || '#fff';
-    setTextareaBackground(colors[color]); // Set textarea background color
+    setTextareaBackground(textareaColors[color] || '#fff');
     showAlert(`${color.charAt(0).toUpperCase() + color.slice(1)} theme has been enabled`, "success");
   };
+
+  // Set initial background color
+  useEffect(() => {
+    document.body.style.backgroundColor = '#fff';
+  }, []);
 
   return (
     <>

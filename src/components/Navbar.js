@@ -6,7 +6,7 @@ export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">{props.title}</a>
+        <Link className="navbar-brand" to="/">{props.title}</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -26,7 +26,7 @@ export default function Navbar(props) {
             <button className="btn btn-info mx-1" onClick={() => props.changeThemeColor('blue')}>Blue</button>
             <button className="btn btn-success mx-1" onClick={() => props.changeThemeColor('green')}>Green</button>
             <button className="btn btn-danger mx-1" onClick={() => props.changeThemeColor('red')}>Red</button>
-            <button className="btn btn-warning mx-1" onClick={() => props.changeThemeColor('yellow')}>Yellow</button>
+            {/* <button className="btn btn-warning mx-1" onClick={() => props.changeThemeColor('yellow')}>Yellow</button> */}
           </div>
         </div>
       </div>
